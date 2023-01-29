@@ -1,0 +1,37 @@
+class Pupil():
+    name = None
+    age = 10
+    number_school = "№123"
+    def what_class(self, year):
+        self.class_tek = self.age-7+1
+    def what_class1(self, year):
+        self.class_tek = self.age-7+1
+    def what_class2(self, year):
+        self.class_tek = self.age-7+1
+
+p1 = Pupil()
+p1.name = "Артём"
+p1.age = 14
+p1.number_school = "№71"
+print(p1.__dict__)
+year = 2023
+p1.what_class(year)
+print(p1.__dict__)
+
+p2 = Pupil()
+p2.name = "Карина"
+p2.age = 12
+p2.number_school = "№9"
+print(p2.__dict__)
+year = 2023
+p2.what_class1(year)
+print(p2.__dict__)
+
+p3 = Pupil()
+p3.name = input("Введите имя: ")
+p3.age = int(input("Введите возраст: "))
+p3.number_school = int(input("Введите номер школы: №"))
+print(p3.__dict__)
+year = 2023
+p3.what_class2(year)
+print(p3.__dict__)
