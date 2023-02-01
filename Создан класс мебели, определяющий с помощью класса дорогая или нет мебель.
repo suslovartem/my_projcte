@@ -1,0 +1,19 @@
+class Furniture():
+    def __init__(self, name, material, cena, cena_min = 5000, cena_max = 20000):
+        self.name = name
+        self.material = material
+        self.cena = cena
+        self.cena_min = cena_min
+        self.cena_max = cena_max
+        if self.cena<self.cena_min:
+            print('дешевая')
+        elif self.cena>self.cena_max:
+            print('дорогая')
+        elif self.cena_min <= self.cena <= self.cena_max:
+            print('обычная')
+            
+               
+meb1=Furniture('стул', 'дерево',200, 5000, 8000)
+print(meb1.__dict__)
+meb2=Furniture('шкаф', 'дерево', 7000)
+print(meb2.__dict__)
