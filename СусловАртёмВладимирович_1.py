@@ -1,43 +1,54 @@
-def encryption(words):
-    cryp_words = ''
+class Numbers():
+    def __init__(self,ch):
+        self.ch = ch
 
-    for syb in words:
-        if syb == '.':
-            cryp_words += '.'
-        elif syb == ' ':
-            cryp_words += ' '
-        elif syb == 'ё':
-           cryp_words += chr(ord('е') + 3)
-        elif syb == 'Ё':
-            cryp_words += chr(ord('Е') + 3)
-        elif syb == 'э':
-            cryp_words += chr(ord('а'))
-        elif syb == 'Э':
-            cryp_words += chr(ord('А'))
-        elif syb == 'ю':
-            cryp_words += chr(ord('а') + 1)
-        elif syb == 'Ю':
-            cryp_words += chr(ord('А') + 1)
-        elif syb == 'я':
-            cryp_words += chr(ord('а') + 2)
-        elif syb == 'Я':
-            cryp_words += chr(ord('А') + 2)
-        elif syb == 'x':
-            cryp_words += chr(ord('a'))
-        elif syb == 'X':
-            cryp_words += chr(ord('A'))
-        elif syb == 'y':
-            cryp_words += chr(ord('a') + 1)
-        elif syb == 'Y':
-            cryp_words += chr(ord('A') + 1)
-        elif syb == 'z':
-            cryp_words += chr(ord('a') + 2)
-        elif syb == 'Z':
-            cryp_words += chr(ord('A') + 2)
+    def kratn(self):
+        rez2 = "False"
+        rez3 = "False"
+        rez4 = "False"
+        rez_vsex = "False"
+        
+        if self.ch%2 == 0:
+            rez2 = "True"
+            
+        if self.ch%3 == 0:
+            rez3 = "True"
+            
+        if self.ch%4 == 0:
+            rez4 = "True"
+            
+        if (self.ch%2 == 0)  and (self.ch%3 == 0)  and (self.ch%4 == 0) :
+            rez_vsex = "True"
+            
+        print('    Число:',self.ch)
+        print('{:^8}{:^8}{:^8}{:^8}'.format('кратно: 2 ',' кратно: 3 ',' кратно: 4 ',' кратновсему'))
+        print('{:^8}{:^7}{:^5}{:^10}{:^5}{:^8}{:^8}'.format(rez2,'|',rez3,'|',rez4,'|',rez_vsex))
+        
+    def __gt__(self,other):
+        
+        if self.ch > other.ch:
+            return 'Первое число больше второго'
+        
         else:
-            cryp_words += chr(ord(syb) + 3)
-    return cryp_words
+            return 'Первое число не больше второго'
+        
+    def __ge__(self,other):
+        
+        if self.ch >= other.ch:
+            return 'Первое число больше или равно второго'
+        
+        else:
+            return 'Первое число не больше или равно второго'
+        
+n1 = Numbers(12)
+print(n1.__dict__)
+n1.kratn()
+n2 = Numbers(10)
+print(n2.__dict__)
+n2.kratn()
+print(n1 > n2)
+print(n1 >= n2)
 
-if __name__ == '__main__':
-    string = input('Введите сообщение: ')
-    print('Зашифрованное сообщение:', encryption(string))
+print( )
+print(____________________________________________________________________:))
+print( )
